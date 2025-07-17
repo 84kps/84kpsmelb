@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Shree 84 Samaj Kadva Patidar Family</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+    .header {
+      text-align: center;
+      background: #ff5c5c;
+      padding: 30px 15px;
+      font-size: 2em;
+      font-weight: bold;
+      color: black;
+      box-shadow: inset -5px -5px 0 #cc0000;
+    }
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .grid-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+    .grid-table th, .grid-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+    .grid-table th {
+      background-color: #e9ebf2;
+      color: #3b4a70;
+    }
+    .grid-table a {
+      color: #1a73e8;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .grid-table a:hover {
+      text-decoration: underline;
+    }
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 80%;
+      max-width: 900px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
+    .family-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .family-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      vertical-align: top;
+    }
+    .family-table .title-row td {
+      font-weight: bold;
+      text-align: center;
+      background: #f3f3f3;
+    }
+    @media (max-width: 768px) {
+      .grid-table, .grid-table tr, .grid-table td {
+        display: block;
+        width: 100%;
+      }
+      .family-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+    form {
+      margin-top: 40px;
+      background: #fff;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #ccc;
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    form h3 {
+      margin-top: 0;
+    }
+    form label {
+      display: block;
+      margin-top: 8px;
+      font-weight: bold;
+    }
+    form input {
+      width: 100%;
+      padding: 6px;
+      margin-top: 4px;
+      box-sizing: border-box;
+    }
+    form .two-columns {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    form .two-columns > div {
+      flex: 1 1 45%;
+    }
+    form button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #ff5c5c;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    form button:hover {
+      background-color: #cc0000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Shree 84 Samaj Kadva Patidar Family, Melbourne</div>
+
+  <div class="container">
+    <table class="grid-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Native Place</th>
+          <th>Current Suburb</th>
+        </tr>
+      </thead>
+      <tbody id="gridBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="memberModal" class="modal" aria-hidden="true" role="dialog" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()" aria-label="Close">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="13" style="text-align:center; width: 200px;">
+            <img id="modalPhoto" src="images/family_photo.jpg" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td id="modalName1"></td>
+          <td id="modalName2"></td>
+        </tr>
+        <tr>
+          <td><b>M:</b> <span id="modalMobile1"></span></td>
+          <td><b>M:</b> <span id="modalMobile2"></span></td>
+        </tr>
+        <tr>
+          <td><b>Age:</b> <span id="modalAge1"></span></td>
+          <td><b>Age:</b> <span id="modalAge2"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Address:</b> <span id="modalAddress"></span></td>
+        </tr>
+        <tr>
+          <td><b>Email:</b> <span id="modalEmail1"></span></td>
+          <td><b>Email:</b> <span id="modalEmail2"></span></td>
+        </tr>
+        <tr>
+          <td><b>Work:</b> <span id="modalWork1"></span></td>
+          <td><b>Work:</b> <span id="modalWork2"></span></td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Children:</b> <span id="modalChildren"></span></td>
+        </tr>
+        <tr>
+          <td><b>Native Place:</b> <span id="modalNative1"></span></td>
+          <td><b>Native Place:</b> <span id="modalNative2"></span></td>
+        </tr>
+        <tr>
+          <td><b>Mosal:</b> <span id="modalMosal1"></span></td>
+          <td><b>Mosal:</b> <span id="modalMosal2"></span></td>
+        </tr>
+        <tr>
+          <td><b>Father’s Name:</b> <span id="modalFather1"></span></td>
+          <td><b>Father’s Name:</b> <span id="modalFather2"></span></td>
+        </tr>
+        <tr>
+          <td><b>Mother’s Name:</b> <span id="modalMother1"></span></td>
+          <td><b>Mother’s Name:</b> <span id="modalMother2"></span></td>
+        </tr>
+        <tr>
+          <td><b>India Address:</b> <span id="modalIndiaAddress1"></span></td>
+          <td><b>India Address:</b> <span id="modalIndiaAddress2"></span></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Add Member Form -->
+  <form id="addMemberForm" aria-label="Add new member form">
+    <h3>Add New Member</h3>
+    <div class="two-columns">
+      <div>
+        <h4>Member 1</h4>
+        <label for="name1">Name</label>
+        <input type="text" id="name1" required />
+
+        <label for="mobile1">Mobile</label>
+        <input type="text" id="mobile1" required />
+
+        <label for="age1">Age</label>
+        <input type="number" id="age1" required />
+
+        <label for="email1">Email</label>
+        <input type="email" id="email1" />
+
+        <label for="work1">Work</label>
+        <input type="text" id="work1" />
+
+        <label for="native1">Native Place</label>
+        <input type="text" id="native1" required />
+
+        <label for="mosal1">Mosal</label>
+        <input type="text" id="mosal1" />
+
+        <label for="father1">Father's Name</label>
+        <input type="text" id="father1" />
+
+        <label for="mother1">Mother's Name</label>
+        <input type="text" id="mother1" />
+
+        <label for="indiaAddress1">India Address</label>
+        <input type="text" id="indiaAddress1" />
+      </div>
+
+      <div>
+        <h4>Member 2 (Spouse)</h4>
+        <label for="name2">Name</label>
+        <input type="text" id="name2" required />
+
+        <label for="mobile2">Mobile</label>
+        <input type="text" id="mobile2" required />
+
+        <label for="age2">Age</label>
+        <input type="number" id="age2" required />
+
+        <label for="email2">Email</label>
+        <input type="email" id="email2" />
+
+        <label for="work2">Work</label>
+        <input type="text" id="work2" />
+
+        <label for="native2">Native Place</label>
+        <input type="text" id="native2" required />
+
+        <label for="mosal2">Mosal</label>
+        <input type="text" id="mosal2" />
+
+        <label for="father2">Father's Name</label>
+        <input type="text" id="father2" />
+
+        <label for="mother2">Mother's Name</label>
+        <input type="text" id="mother2" />
+
+        <label for="indiaAddress2">India Address</label>
+        <input type="text" id="indiaAddress2" />
+      </div>
+    </div>
+
+    <label for="children">Children</label>
+    <input type="text" id="children" placeholder="Example: Aayansh (Age 4)" />
+
+    <label for="address">Address</label>
+    <input type="text" id="address" placeholder="Current address" />
+
+    <label for="photo">Photo URL</label>
+    <input type="url" id="photo" placeholder="URL of family photo" />
+
+    <label for="suburb">Current Suburb</label>
+    <input type="text" id="suburb" required />
+
+    <button type="submit">Add Member</button>
+  </form>
+
+  <script>
+    const gridBody = document.getElementById("gridBody");
+    const addMemberForm = document.getElementById("addMemberForm");
+
+    // Fetch members from backend API
+    async function fetchMembers() {
+      const res = await fetch("http://localhost:3000/api/members");
+      const data = await res.json();
+      return data;
+    }
+
+    // Render members into table
+    function renderTable(members) {
+      gridBody.innerHTML = "";
+      members.forEach((member) => {
+        const tr = document.createElement("tr");
+
+        const tdName = document.createElement("td");
+        const a = document.createElement("a");
+        a.href = "#";
+        a.textContent = `${member.name1} & ${member.name2}`;
+        a.onclick = (e) => {
+          e.preventDefault();
+          showModal(member);
+        };
+        tdName.appendChild(a);
+
+        const tdNative = document.createElement("td");
+        tdNative.textContent = `${member.native1} / ${member.native2}`;
+
+        const tdSuburb = document.createElement("td");
+        tdSuburb.textContent = member.suburb;
+
+        tr.appendChild(tdName);
+        tr.appendChild(tdNative);
+        tr.appendChild(tdSuburb);
+
+        gridBody.appendChild(tr);
+      });
+    }
+
+    // Show modal with member details
+    function showModal(m) {
+      document.getElementById("modalTitle").innerText = `${m.name1} & ${m.name2}`;
+      document.getElementById("modalPhoto").src = m.photo || "images/family_photo.jpg";
+
+      document.getElementById("modalName1").textContent = m.name1 || "";
+      document.getElementById("modalMobile1").textContent = m.mobile1 || "";
+      document.getElementById("modalAge1").textContent = m.age1 || "";
+      document.getElementById("modalEmail1").textContent = m.email1 || "";
+      document.getElementById("modalWork1").textContent = m.work1 || "";
+      document.getElementById("modalNative1").textContent = m.native1 || "";
+      document.getElementById("modalMosal1").textContent = m.mosal1 || "";
+      document.getElementById("modalFather1").textContent = m.father1 || "";
+      document.getElementById("modalMother1").textContent = m.mother1 || "";
+      document.getElementById("modalIndiaAddress1").textContent = m.indiaAddress1 || "";
+
+      document.getElementById("modalName2").textContent = m.name2 || "";
+      document.getElementById("modalMobile2").textContent = m.mobile2 || "";
+      document.getElementById("modalAge2").textContent = m.age2 || "";
+      document.getElementById("modalEmail2").textContent = m.email2 || "";
+      document.getElementById("modalWork2").textContent = m.work2 || "";
+      document.getElementById("modalNative2").textContent = m.native2 || "";
+      document.getElementById("modalMosal2").textContent = m.mosal2 || "";
+      document.getElementById("modalFather2").textContent = m.father2 || "";
+      document.getElementById("modalMother2").textContent = m.mother2 || "";
+      document.getElementById("modalIndiaAddress2").textContent = m.indiaAddress2 || "";
+
+      document.getElementById("modalChildren").textContent = m.children || "";
+      document.getElementById("modalAddress").textContent = m.address || "";
+
+      document.getElementById("memberModal").style.display = "block";
+    }
+
+    // Close modal function
+    function closeModal() {
+      document.getElementById("memberModal").style.display = "none";
+    }
+
+    // Close modal if click outside content
+    window.onclick = function (event) {
+      const modal = document.getElementById("memberModal");
+      if (event.target === modal) {
+        closeModal();
+      }
+    };
+
+    // Handle form submission
+    addMemberForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const newMember = {
+        name1: document.getElementById("name1").value.trim(),
+        mobile1: document.getElementById("mobile1").value.trim(),
+        age1: document.getElementById("age1").value.trim(),
+        email1: document.getElementById("email1").value.trim(),
+        work1: document.getElementById("work1").value.trim(),
+        native1: document.getElementById("native1").value.trim(),
+        mosal1: document.getElementById("mosal1").value.trim(),
+        father1: document.getElementById("father1").value.trim(),
+        mother1: document.getElementById("mother1").value.trim(),
+        indiaAddress1: document.getElementById("indiaAddress1").value.trim(),
+
+        name2: document.getElementById("name2").value.trim(),
+        mobile2: document.getElementById("mobile2").value.trim(),
+        age2: document.getElementById("age2").value.trim(),
+        email2: document.getElementById("email2").value.trim(),
+        work2: document.getElementById("work2").value.trim(),
+        native2: document.getElementById("native2").value.trim(),
+        mosal2: document.getElementById("mosal2").value.trim(),
+        father2: document.getElementById("father2").value.trim(),
+        mother2: document.getElementById("mother2").value.trim(),
+        indiaAddress2: document.getElementById("indiaAddress2").value.trim(),
+
+        children: document.getElementById("children").value.trim(),
+        address: document.getElementById("address").value.trim(),
+        photo: document.getElementById("photo").value.trim(),
+        suburb: document.getElementById("suburb").value.trim()
+      };
+
+      try {
+        const res = await fetch("http://localhost:3000/api/members", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(newMember),
+        });
+        if (!res.ok) throw new Error("Failed to add member");
+
+        // Refresh the members table after adding
+        await loadMembers();
+        addMemberForm.reset();
+        alert("Member added successfully!");
+      } catch (err) {
+        alert("Error: Could not save member.");
+        console.error(err);
+      }
+    });
+
+    // Load members from API and render
+    async function loadMembers() {
+      const members = await fetchMembers();
+      renderTable(members);
+    }
+
+    // Initial load
+    loadMembers();
+  </script>
+
+</body>
+</html>

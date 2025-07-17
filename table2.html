@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Shree 84 Samaj Kadva Patidar Family</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+    }
+
+    .header {
+      text-align: center;
+      background: #ff5c5c;
+      padding: 30px 15px;
+      font-size: 2em;
+      font-weight: bold;
+      color: black;
+      box-shadow: inset -5px -5px 0 #cc0000;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .grid-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .grid-table th, .grid-table td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: left;
+    }
+
+    .grid-table th {
+      background-color: #e9ebf2;
+      color: #3b4a70;
+    }
+
+    .grid-table a {
+      color: #1a73e8;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .grid-table a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal Styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 80%;
+      max-width: 900px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
+
+    .family-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    .family-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+
+    .family-table .title-row td {
+      font-weight: bold;
+      text-align: center;
+      background: #f3f3f3;
+    }
+
+    @media (max-width: 768px) {
+      .grid-table, .grid-table tr, .grid-table td {
+        display: block;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Shree 84 Samaj Kadva Patidar Family, Melbourne</div>
+
+  <div class="container">
+    <table class="grid-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Native Place</th>
+          <th>Current Suburb</th>
+        </tr>
+      </thead>
+      <tbody id="gridBody"></tbody>
+    </table>
+  </div>
+
+  <!-- Modal -->
+  <div id="memberModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="modalTitle"></h2>
+      <table class="family-table">
+        <tr class="title-row">
+<td rowspan="13" style="text-align:center; width: 200px;">
+      <img src="images/family_photo.jpg" alt="Family Photo" style="width:180px; border-radius:10px;">
+    </td>
+          <td>Patel Mayur</td>
+          <td>Patel Heena</td>
+        </tr>
+        <tr>
+          <td><b>M:</b> +61 430 302 191</td>
+          <td><b>M:</b> +61 430 302 191</td>
+        </tr>
+        <tr>
+          <td><b>Age:</b> 34</td>
+          <td><b>Age:</b> 32</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Address:</b> Cranbourne, 3977</td>
+        </tr>
+        <tr>
+          <td><b>Email:</b> mpdeny@gmail.com</td>
+          <td><b>Email:</b> hmpatel3121@gmail.com</td>
+        </tr>
+        <tr>
+          <td><b>Work:</b> IT (KPMG)</td>
+          <td><b>Work:</b> IT (Commonwealth Bank)</td>
+        </tr>
+        <tr>
+          <td colspan="2"><b>Children:</b> Aayansh (Age 4)</td>
+        </tr>
+        <tr>
+          <td><b>Native Place:</b> Modhera</td>
+          <td><b>Native Place:</b> Ganshpura (Opp: Gambhu)</td>
+        </tr>
+        <tr>
+          <td><b>Mosal:</b> Maniyari</td>
+          <td><b>Mosal:</b> Chamicha</td>
+        </tr>
+        <tr>
+          <td><b>Father’s Name:</b> Pravinbhai Kashiramdas</td>
+          <td><b>Father’s Name:</b> Ambarabhai Ishwardas</td>
+        </tr>
+        <tr>
+          <td><b>Mother’s Name:</b> Kailashben Pravinbhai</td>
+          <td><b>Mother’s Name:</b> Vimalaben Ambarambhai</td>
+        </tr>
+        <tr>
+          <td><b>India Address:</b> Gandhinagar</td>
+          <td><b>India Address:</b> Gandhinagar</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    const members = [
+      { name: "Ajay Patel (Adiwada)", native: "Adiwada", suburb: "Cranbourne", hasDetails: true },
+      { name: "Anil M. Patel (Venpura)", native: "Venpura", suburb: "Clayton" },
+      { name: "Asha Tejas Patel (Chaveli)", native: "Chaveli", suburb: "Point Cook" },
+      { name: "Ashish Patel (Jetpur)", native: "Jetpur", suburb: "Truganina" },
+      { name: "Member 5", native: "Chansad", suburb: "Werribee" }
+    ];
+
+    const gridBody = document.getElementById("gridBody");
+
+    members.forEach(member => {
+      const tr = document.createElement("tr");
+
+      const tdName = document.createElement("td");
+      const a = document.createElement("a");
+      a.textContent = member.name;
+      a.href = "#";
+      if (member.hasDetails) {
+        a.onclick = () => showModal(member.name);
+      }
+      tdName.appendChild(a);
+
+      const tdNative = document.createElement("td");
+      tdNative.textContent = member.native;
+
+      const tdSuburb = document.createElement("td");
+      tdSuburb.textContent = member.suburb;
+
+      tr.appendChild(tdName);
+      tr.appendChild(tdNative);
+      tr.appendChild(tdSuburb);
+
+      gridBody.appendChild(tr);
+    });
+
+    function showModal(memberName) {
+      document.getElementById("modalTitle").innerText = memberName;
+      document.getElementById("memberModal").style.display = "block";
+    }
+
+    function closeModal() {
+      document.getElementById("memberModal").style.display = "none";
+    }
+
+    window.onclick = function (event) {
+      const modal = document.getElementById("memberModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    };
+  </script>
+
+</body>
+</html>
+
