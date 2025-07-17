@@ -3,114 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <title>Shree 84 Samaj Kadva Patidar Family</title>
+  <link rel="stylesheet" href="css/style.css">
+  
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f9f9f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    .header {
-      text-align: center;
-      background: #ff5c5c;
-      padding: 30px 15px;
-      font-size: 2em;
-      font-weight: bold;
-      color: black;
-      box-shadow: inset -5px -5px 0 #cc0000;
-    }
-
-    .container {
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .grid-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-    }
-
-    .grid-table th, .grid-table td {
-      border: 1px solid #ccc;
-      padding: 12px;
-      text-align: left;
-    }
-
-    .grid-table th {
-      background-color: #e9ebf2;
-      color: #3b4a70;
-    }
-
-    .grid-table a {
-      color: #1a73e8;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .grid-table a:hover {
-      text-decoration: underline;
-    }
-
-    /* Modal Styling */
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow-y: auto;
-      background-color: rgba(0, 0, 0, 0.6);
-    }
-
-    .modal-content {
-      background-color: #fff;
-      margin: 5% auto;
-      padding: 20px;
-      border-radius: 20px;
-      width: 80%;
-      max-width: 900px;
-      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    }
-
-    .close {
-      float: right;
-      font-size: 24px;
-      font-weight: bold;
-      color: red;
-      cursor: pointer;
-    }
-
-    .family-table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 10px;
-    }
-
-    .family-table td {
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-
-    .family-table .title-row td {
-      font-weight: bold;
-      text-align: center;
-      background: #f3f3f3;
-    }
-
-    @media (max-width: 768px) {
-      .grid-table, .grid-table tr, .grid-table td {
-        display: block;
-        width: 100%;
-      }
-    }
+    
   </style>
 </head>
 <body>
+<body>
+
+  <!-- Language toggle button -->
+  <div style="text-align: right; margin: 10px 20px;">
+    <button id="toggleLangBtn" style="padding: 8px 15px; font-weight: bold; cursor: pointer;">ગુજરાતી</button>
+  </div>
 
   <div class="header">Shree 84 Samaj Kadva Patidar Family, Melbourne</div>
 
@@ -134,9 +39,9 @@
       <h2 id="modalTitle"></h2>
       <table class="family-table">
         <tr class="title-row">
-<td rowspan="13" style="text-align:center; width: 200px;">
-      <img src="images/family_photo.jpg" alt="Family Photo" style="width:180px; border-radius:10px;">
-    </td>
+          <td rowspan="13" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;">
+          </td>
           <td>Patel Mayur</td>
           <td>Patel Heena</td>
         </tr>
@@ -186,23 +91,56 @@
     </div>
   </div>
 
-  <script>
-    const members = [
-      { name: "Ajay Patel (Adiwada)", native: "Adiwada", suburb: "Cranbourne", hasDetails: true },
-      { name: "Anil M. Patel (Venpura)", native: "Venpura", suburb: "Clayton" },
-      { name: "Asha Tejas Patel (Chaveli)", native: "Chaveli", suburb: "Point Cook" },
-      { name: "Ashish Patel (Jetpur)", native: "Jetpur", suburb: "Truganina" },
-      { name: "Member 5", native: "Chansad", suburb: "Werribee" }
-    ];
+<script>
+  // Members data (English)
+  const members = [
+    { name: "Ajay Patel (Adiwada)", native: "Adiwada", suburb: "Cranbourne", hasDetails: true },
+    { name: "Anil M. Patel (Venpura)", native: "Venpura", suburb: "Clayton" },
+    { name: "Asha Tejas Patel (Chaveli)", native: "Chaveli", suburb: "Point Cook" },
+    { name: "Ashish Patel (Jetpur)", native: "Jetpur", suburb: "Truganina" },
+    { name: "Member 5", native: "Chansad", suburb: "Werribee" }
+  ];
 
-    const gridBody = document.getElementById("gridBody");
+  // Gujarati translations
+  const gujaratiText = {
+    header: "શ્રી ૮૪ સમાજ કડવા પાટીદાર ફેમિલી, મેલબોર્ન",
+    tableHeaders: ["નામ", "મૂળ સ્થાન", "હાલનું શહેર"],
+    members: [
+      "અજય પટેલ (અડિવાડા)",
+      "અનિવ મ. પટેલ (વેન્પુરા)",
+      "આશા તેજસ પટેલ (ચવેલી)",
+      "અશિશ પટેલ (જેટપુર)",
+      "સભ્ય ૫"
+    ],
+    closeText: "બંધ કરો",
+    modalContent: {
+      "Patel Mayur": ["પટેલ માયુર", "પટેલ હીના"],
+      "M: +61 430 302 191": ["મોબાઇલ: +61 430 302 191", "મોબાઇલ: +61 430 302 191"],
+      "Age: 34": ["ઉમ્ર: ૩૪", "ઉમ્ર: ૩૨"],
+      "Address: Cranbourne, 3977": ["સરનામું: ક્રાનબોર્ન, ૩૯૭૭", "સરનામું: ક્રાનબોર્ન, ૩૯૭૭"],
+      "Email: mpdeny@gmail.com": ["ઈમેલ: mpdeny@gmail.com", "ઈમેલ: hmpatel3121@gmail.com"],
+      "Work: IT (KPMG)": ["કામ: આઇટી (KPMG)", "કામ: આઇટી (કોમનવેલ્થ બેંક)"],
+      "Children: Aayansh (Age 4)": ["બાળકો: આયાન્શ (ઉમ્ર ૪)"],
+      "Native Place: Modhera": ["મૂળ સ્થાન: મોડેરા", "મૂળ સ્થાન: ગણશપુરા (ઓપ્પ: ગમભુ)"],
+      "Mosal: Maniyari": ["મોસલ: મણિયારી", "મોસલ: ચમીચા"],
+      "Father’s Name: Pravinbhai Kashiramdas": ["પિતાનું નામ: પ્રવીણભાઈ કશીરામદાસ", "પિતાનું નામ: અંબારાભાઈ ઈશ્વરદાસ"],
+      "Mother’s Name: Kailashben Pravinbhai": ["માતાનું નામ: કૈલાશબેન પ્રવીણભાઈ", "માતાનું નામ: વિમલાબેન અંબારંભાઈ"],
+      "India Address: Gandhinagar": ["ભારતનું સરનામું: ગાંધીનગર", "ભારતનું સરનામું: ગાંધીનગર"]
+    }
+  };
 
-    members.forEach(member => {
+  const gridBody = document.getElementById("gridBody");
+  const toggleBtn = document.getElementById("toggleLangBtn");
+  let isGujarati = false;
+
+  function loadTable() {
+    gridBody.innerHTML = "";
+    members.forEach((member, index) => {
       const tr = document.createElement("tr");
 
       const tdName = document.createElement("td");
       const a = document.createElement("a");
-      a.textContent = member.name;
+      a.textContent = isGujarati ? gujaratiText.members[index] || member.name : member.name;
       a.href = "#";
       if (member.hasDetails) {
         a.onclick = () => showModal(member.name);
@@ -210,10 +148,10 @@
       tdName.appendChild(a);
 
       const tdNative = document.createElement("td");
-      tdNative.textContent = member.native;
+      tdNative.textContent = isGujarati ? toGujaratiNative(member.native) : member.native;
 
       const tdSuburb = document.createElement("td");
-      tdSuburb.textContent = member.suburb;
+      tdSuburb.textContent = isGujarati ? toGujaratiSuburb(member.suburb) : member.suburb;
 
       tr.appendChild(tdName);
       tr.appendChild(tdNative);
@@ -221,24 +159,127 @@
 
       gridBody.appendChild(tr);
     });
+  }
 
-    function showModal(memberName) {
-      document.getElementById("modalTitle").innerText = memberName;
-      document.getElementById("memberModal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("memberModal").style.display = "none";
-    }
-
-    window.onclick = function (event) {
-      const modal = document.getElementById("memberModal");
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
+  // Simple manual mapping for Native and Suburb (expand as needed)
+  function toGujaratiNative(native) {
+    const map = {
+      "Adiwada": "અડિવાડા",
+      "Venpura": "વેન્પુરા",
+      "Chaveli": "ચવેલી",
+      "Jetpur": "જેટપુર",
+      "Chansad": "ચાંસદ"
     };
-  </script>
+    return map[native] || native;
+  }
+
+  function toGujaratiSuburb(suburb) {
+    const map = {
+      "Cranbourne": "ક્રાનબોર્ન",
+      "Clayton": "ક્લેટન",
+      "Point Cook": "પોઇન્ટ કૂક",
+      "Truganina": "ટ્રુગાનીના",
+      "Werribee": "વેરીબી"
+    };
+    return map[suburb] || suburb;
+  }
+
+  toggleBtn.addEventListener("click", () => {
+    isGujarati = !isGujarati;
+    if (isGujarati) {
+      toggleBtn.textContent = "English";
+    } else {
+      toggleBtn.textContent = "ગુજરાતી";
+    }
+    updatePageLanguage();
+  });
+
+  function updatePageLanguage() {
+    document.querySelector(".header").textContent = isGujarati ? gujaratiText.header : "Shree 84 Samaj Kadva Patidar Family, Melbourne";
+
+    // Table headers
+    const ths = document.querySelectorAll(".grid-table thead th");
+    if (isGujarati) {
+      ths[0].textContent = gujaratiText.tableHeaders[0];
+      ths[1].textContent = gujaratiText.tableHeaders[1];
+      ths[2].textContent = gujaratiText.tableHeaders[2];
+    } else {
+      ths[0].textContent = "Name";
+      ths[1].textContent = "Native Place";
+      ths[2].textContent = "Current Suburb";
+    }
+
+    // Reload table rows with proper language
+    loadTable();
+
+    // Update close button text in modal
+    const closeBtn = document.querySelector(".close");
+    closeBtn.textContent = isGujarati ? gujaratiText.closeText : "×";
+  }
+
+  function showModal(memberName) {
+    const modalTitle = document.getElementById("modalTitle");
+    modalTitle.textContent = isGujarati ? translateModalTitle(memberName) : memberName;
+
+    const modalTable = document.querySelector(".family-table");
+
+    if (isGujarati) {
+      const c = gujaratiText.modalContent;
+      modalTable.rows[0].cells[1].innerText = c["Patel Mayur"][0];
+      modalTable.rows[0].cells[2].innerText = c["Patel Mayur"][1];
+      modalTable.rows[1].cells[0].innerText = c["M: +61 430 302 191"][0];
+      modalTable.rows[1].cells[1].innerText = c["M: +61 430 302 191"][1];
+      modalTable.rows[2].cells[0].innerText = c["Age: 34"][0];
+      modalTable.rows[2].cells[1].innerText = c["Age: 34"][1];
+      modalTable.rows[3].cells[0].innerText = c["Address: Cranbourne, 3977"][0];
+      modalTable.rows[3].cells[1].innerText = c["Address: Cranbourne, 3977"][1];
+      modalTable.rows[4].cells[0].innerText = c["Email: mpdeny@gmail.com"][0];
+      modalTable.rows[4].cells[1].innerText = c["Email: mpdeny@gmail.com"][1];
+      modalTable.rows[5].cells[0].innerText = c["Work: IT (KPMG)"][0];
+      modalTable.rows[5].cells[1].innerText = c["Work: IT (KPMG)"][1];
+      modalTable.rows[6].cells[0].innerText = c["Children: Aayansh (Age 4)"][0];
+      modalTable.rows[6].cells[1].innerText = "";
+      modalTable.rows[7].cells[0].innerText = c["Native Place: Modhera"][0];
+      modalTable.rows[7].cells[1].innerText = c["Native Place: Modhera"][1];
+      modalTable.rows[8].cells[0].innerText = c["Mosal: Maniyari"][0];
+      modalTable.rows[8].cells[1].innerText = c["Mosal: Maniyari"][1];
+      modalTable.rows[9].cells[0].innerText = c["Father’s Name: Pravinbhai Kashiramdas"][0];
+      modalTable.rows[9].cells[1].innerText = c["Father’s Name: Pravinbhai Kashiramdas"][1];
+      modalTable.rows[10].cells[0].innerText = c["Mother’s Name: Kailashben Pravinbhai"][0];
+      modalTable.rows[10].cells[1].innerText = c["Mother’s Name: Kailashben Pravinbhai"][1];
+      modalTable.rows[11].cells[0].innerText = c["India Address: Gandhinagar"][0];
+      modalTable.rows[11].cells[1].innerText = c["India Address: Gandhinagar"][1];
+    } else {
+      // Reload page for English reset (simple way)
+      location.reload();
+    }
+
+    document.getElementById("memberModal").style.display = "block";
+  }
+
+  function translateModalTitle(name) {
+    const idx = members.findIndex(m => m.name === name);
+    if (idx >= 0 && gujaratiText.members[idx]) return gujaratiText.members[idx];
+    return name;
+  }
+
+  function closeModal() {
+    document.getElementById("memberModal").style.display = "none";
+  }
+
+  window.onclick = function (event) {
+    const modal = document.getElementById("memberModal");
+    if (event.target === modal) {
+      closeModal();
+    }
+  };
+
+  // Initial load
+  updatePageLanguage();
+
+</script>
 
 </body>
+
 </html>
 

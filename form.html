@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add Family Member</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="header">Add Family Member</div>
+
+  <div class="container">
+    <form id="memberForm">
+      <label>Full Name:
+        <input type="text" name="name" required>
+      </label><br><br>
+
+      <label>Native Place:
+        <input type="text" name="native" required>
+      </label><br><br>
+
+      <label>Current Suburb:
+        <input type="text" name="suburb" required>
+      </label><br><br>
+
+      <label>Mobile Number:
+        <input type="text" name="mobile">
+      </label><br><br>
+
+      <label>Family Member 1:
+        <input type="text" name="family1">
+      </label><br><br>
+
+      <label>Family Member 2:
+        <input type="text" name="family2">
+      </label><br><br>
+
+      <label>Family Member 3:
+        <input type="text" name="family3">
+      </label><br><br>
+
+      <label>Family Member 4:
+        <input type="text" name="family4">
+      </label><br><br>
+
+      <button type="submit">Add Member</button>
+    </form>
+
+    <p><a href="index.html">← Back to Directory</a></p>
+  </div>
+
+  <script>
+    document.getElementById("memberForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const newMember = {
+        name: formData.get("name"),
+        native: formData.get("native"),
+        suburb: formData.get("suburb"),
+        mobile: formData.get("mobile"),
+        family: [
+          formData.get("family1"),
+          formData.get("family2"),
+          formData.get("family3"),
+          formData.get("family4")
+        ].filter(f => f) // remove empty entries
+      };
+
+      // Replace this with your backend integration
+      console.log("New Member:", newMember);
+
+      alert("Family member added successfully!");
+      e.target.reset();
+    });
+  </script>
+
+</body>
+</html>
