@@ -3,256 +3,44 @@
 <head>
   <meta charset="UTF-8">
   <title>Add Family Member</title>
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f6f9;
-      margin: 0;
-      padding: 0;
-    }
-
-    .header {
-      background-color: #2c3e50;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      font-size: 1.8rem;
-      font-weight: bold;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 30px auto;
-      background: white;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-    }
-
-    form h3 {
-      background: #3498db;
-      color: white;
-      padding: 10px;
-      border-radius: 5px;
-      margin-top: 30px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 12px;
-      font-weight: 600;
-    }
-
-    input[type="text"],
-    input[type="email"],
-    input[type="number"] {
-      width: 100%;
-      padding: 10px;
-      margin-top: 4px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      box-sizing: border-box;
-    }
-
-    button[type="submit"] {
-      margin-top: 30px;
-      padding: 12px 25px;
-      background-color: #2ecc71;
-      border: none;
-      color: white;
-      font-size: 16px;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background-color 0.2s ease-in-out;
-    }
-
-    button[type="submit"]:hover {
-      background-color: #27ae60;
-    }
-
-    a {
-      text-decoration: none;
-      color: #3498db;
-    }
-
-    .back-link {
-      margin-top: 20px;
-      display: inline-block;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-
-      .header {
-        font-size: 1.5rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <div class="header">Add Family Member</div>
 
   <div class="container">
-    <form id="memberForm">
+    <form id="familyForm">
+      <label>Husband Name: <input type="text" name="husbandName" required></label><br>
+      <label>Husband Mobile: <input type="text" name="husbandMobile"></label><br>
+      <label>Husband Age: <input type="number" name="husbandAge"></label><br>
+      <label>Husband Email: <input type="email" name="husbandEmail"></label><br>
+      <label>Husband Work: <input type="text" name="husbandWork"></label><br><br>
 
-      <h3>Family Details</h3>
+      <label>Wife Name: <input type="text" name="wifeName"></label><br>
+      <label>Wife Mobile: <input type="text" name="wifeMobile"></label><br>
+      <label>Wife Age: <input type="number" name="wifeAge"></label><br>
+      <label>Wife Email: <input type="email" name="wifeEmail"></label><br>
+      <label>Wife Work: <input type="text" name="wifeWork"></label><br><br>
 
-      <label>Family Title:
-        <input type="text" name="title" required>
-      </label>
+      <label>Children: <input type="text" name="children"></label><br>
+      <label>Address in Melbourne: <input type="text" name="address"></label><br>
+      <label>Native Place: <input type="text" name="nativePlace" required></label><br>
+      <label>Suburb: <input type="text" name="suburb" required></label><br>
+      <label>Mosal: <input type="text" name="mosal"></label><br>
+      <label>Father Name: <input type="text" name="father"></label><br>
+      <label>Mother Name: <input type="text" name="mother"></label><br>
+      <label>Address in India: <input type="text" name="indiaAddress"></label><br>
+      <label>Family Photo: <input type="file" name="familyPhoto" accept="image/*" required></label><br><br>
 
-      <label>Current Address:
-        <input type="text" name="address" required>
-      </label>
-
-      <label>Suburb & Postcode:
-        <input type="text" name="suburb" required>
-      </label>
-
-      <label>Children (e.g., Aayansh (Age 4)):
-        <input type="text" name="children">
-      </label>
-
-      <h3>Member 1 (Required)</h3>
-
-      <label>Full Name:
-        <input type="text" name="member1_name" required>
-      </label>
-
-      <label>Mobile:
-        <input type="text" name="member1_mobile" required>
-      </label>
-
-      <label>Age:
-        <input type="number" name="member1_age" required>
-      </label>
-
-      <label>Email:
-        <input type="email" name="member1_email" required>
-      </label>
-
-      <label>Work:
-        <input type="text" name="member1_work" required>
-      </label>
-
-      <label>Native Place:
-        <input type="text" name="member1_native" required>
-      </label>
-
-      <label>Mosal:
-        <input type="text" name="member1_mosal" required>
-      </label>
-
-      <label>Father's Name:
-        <input type="text" name="member1_father" required>
-      </label>
-
-      <label>Mother's Name:
-        <input type="text" name="member1_mother" required>
-      </label>
-
-      <label>India Address:
-        <input type="text" name="member1_india_address" required>
-      </label>
-
-      <h3>Member 2 (Optional)</h3>
-
-      <label>Full Name:
-        <input type="text" name="member2_name">
-      </label>
-
-      <label>Mobile:
-        <input type="text" name="member2_mobile">
-      </label>
-
-      <label>Age:
-        <input type="number" name="member2_age">
-      </label>
-
-      <label>Email:
-        <input type="email" name="member2_email">
-      </label>
-
-      <label>Work:
-        <input type="text" name="member2_work">
-      </label>
-
-      <label>Native Place:
-        <input type="text" name="member2_native">
-      </label>
-
-      <label>Mosal:
-        <input type="text" name="member2_mosal">
-      </label>
-
-      <label>Father's Name:
-        <input type="text" name="member2_father">
-      </label>
-
-      <label>Mother's Name:
-        <input type="text" name="member2_mother">
-      </label>
-
-      <label>India Address:
-        <input type="text" name="member2_india_address">
-      </label>
-
-      <button type="submit">Add Member</button>
+      <button type="submit">Submit</button>
     </form>
-
-    <a href="index.html" class="back-link">← Back to Directory</a>
   </div>
 
-  <script>
-    document.getElementById("memberForm").addEventListener("submit", async function (e) {
-      e.preventDefault();
-      const formData = new FormData(e.target);
-      const payload = {};
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js"></script>
 
-      // Required fields
-      const keys = [
-        "title", "address", "suburb", "children",
-        "member1_name", "member1_mobile", "member1_age", "member1_email", "member1_work",
-        "member1_native", "member1_mosal", "member1_father", "member1_mother", "member1_india_address"
-      ];
-      keys.forEach(key => payload[key] = formData.get(key));
-
-      // Optional member2
-      const member2Keys = [
-        "member2_name", "member2_mobile", "member2_age", "member2_email", "member2_work",
-        "member2_native", "member2_mosal", "member2_father", "member2_mother", "member2_india_address"
-      ];
-      const member2Data = {};
-      let member2HasData = false;
-
-      member2Keys.forEach(key => {
-        const val = formData.get(key);
-        if (val && val.trim() !== "") {
-          member2HasData = true;
-          member2Data[key] = val;
-        }
-      });
-
-      if (member2HasData) Object.assign(payload, member2Data);
-
-      try {
-        await fetch("https://your-backend-url.com/api/members", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload)
-        });
-
-        alert("Family member added successfully!");
-        e.target.reset();
-      } catch (err) {
-        alert("Error saving data. Please try again.");
-        console.error(err);
-      }
-    });
-  </script>
-
+  <script type="module" src="js/form.js"></script>
 </body>
 </html>

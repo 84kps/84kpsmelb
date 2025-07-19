@@ -1,50 +1,52 @@
- const members = [
-      { name: "Ajay Patel (Adiwada)", native: "Adiwada", suburb: "Cranbourne", hasDetails: true },
-      { name: "Anil M. Patel (Venpura)", native: "Venpura", suburb: "Clayton" },
-      { name: "Asha Tejas Patel (Chaveli)", native: "Chaveli", suburb: "Point Cook" },
-      { name: "Ashish Patel (Jetpur)", native: "Jetpur", suburb: "Truganina" },
-      { name: "Member 5", native: "Chansad", suburb: "Werribee" }
-    ];
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
-    const gridBody = document.getElementById("gridBody");
+// Firebase config
+const firebaseConfig = {
+  apiKey: "AIzaSyDxpsqu-E8DGw0H4zeKqFqsoEVltnScQ5w",
+  authDomain: "kpsmelbourne-2ec9a.firebaseapp.com",
+  projectId: "kpsmelbourne-2ec9a",
+  storageBucket: "kpsmelbourne-2ec9a.appspot.com",
+  messagingSenderId: "484924325801",
+  appId: "1:484924325801:web:ee9f81805c9294e3b08eb8"
+};
 
-    members.forEach(member => {
-      const tr = document.createElement("tr");
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
-      const tdName = document.createElement("td");
-      const a = document.createElement("a");
-      a.textContent = member.name;
-      a.href = "#";
-      if (member.hasDetails) {
-        a.onclick = () => showModal(member.name);
-      }
-      tdName.appendChild(a);
+async function loadMembers() {
+  const grid = document.getElementById("gridBody");
+  grid.innerHTML = "";
+  const snapshot = await getDocs(collection(db, "members"));
 
-      const tdNative = document.createElement("td");
-      tdNative.textContent = member.native;
+  snapshot.forEach(doc => {
+    const m = doc.data();
+    const row = document.createElement("tr");
+    row.innerHTML = `
+      <td>${m.name}</td>
+      <td>${m.native}</td>
+      <td>${m.suburb}</td>
+      <td><a href="#" onclick='showDetails(${JSON.stringify(JSON.stringify(m.details))})'>View</a></td>
+    `;
+    grid.appendChild(row);
+  });
+}
 
-      const tdSuburb = document.createElement("td");
-      tdSuburb.textContent = member.suburb;
+window.showDetails = function(detailsStr) {
+  const d = JSON.parse(detailsStr);
+  const content = document.getElementById("modalContent");
+  content.innerHTML = `
+    <span class="close" onclick="document.getElementById('memberModal').style.display='none'">&times;</span>
+    <img src="${d.image}" width="200" style="border-radius:10px;"><br><br>
+    <b>Address:</b> ${d.address}<br>
+    <b>Children:</b> ${d.children}<br><br>
+    <b>Husband:</b> ${d.member1.name}, ${d.member1.mobile}, ${d.member1.email}, ${d.member1.work}<br>
+    <b>Wife:</b> ${d.member2.name}, ${d.member2.mobile}, ${d.member2.email}, ${d.member2.work}<br>
+    <b>Mosal:</b> ${d.mosal}<br>
+    <b>Father:</b> ${d.father} &nbsp; <b>Mother:</b> ${d.mother}<br>
+    <b>India Address:</b> ${d.indiaAddress}
+  `;
+  document.getElementById("memberModal").style.display = "block";
+};
 
-      tr.appendChild(tdName);
-      tr.appendChild(tdNative);
-      tr.appendChild(tdSuburb);
-
-      gridBody.appendChild(tr);
-    });
-
-    function showModal(memberName) {
-      document.getElementById("modalTitle").innerText = memberName;
-      document.getElementById("memberModal").style.display = "block";
-    }
-
-    function closeModal() {
-      document.getElementById("memberModal").style.display = "none";
-    }
-
-    window.onclick = function (event) {
-      const modal = document.getElementById("memberModal");
-      if (event.target === modal) {
-        modal.style.display = "none";
-      }
-    };
+window.onload = loadMembers;
