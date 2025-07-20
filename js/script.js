@@ -1,6 +1,14 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
 import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js";
 
+const toggleSwitch = document.getElementById("languageToggle");
+toggleSwitch.addEventListener("change", function () {
+  const enElements = document.querySelectorAll(".en");
+  const guElements = document.querySelectorAll(".gu");
+
+  enElements.forEach(el => el.style.display = this.checked ? "none" : "table-row");
+  guElements.forEach(el => el.style.display = this.checked ? "table-row" : "none");
+});
 // Firebase config
 const firebaseConfig = {
   apiKey: "AIzaSyDxpsqu-E8DGw0H4zeKqFqsoEVltnScQ5w",
@@ -50,3 +58,21 @@ window.showDetails = function(detailsStr) {
 };
 
 window.onload = loadMembers;
+const toggleBtn = document.getElementById('langToggle');
+
+toggleBtn.addEventListener('click', () => {
+  const guRows = document.querySelectorAll('.gu');
+  const enRows = document.querySelectorAll('.en');
+
+  // If Gujarati rows currently hidden, show them, hide English
+  if (guRows[0].style.display === 'none' || guRows[0].style.display === '') {
+    guRows.forEach(row => row.style.display = '');
+    enRows.forEach(row => row.style.display = 'none');
+    toggleBtn.textContent = 'Switch to English';
+  } else {
+    // Show English, hide Gujarati
+    guRows.forEach(row => row.style.display = 'none');
+    enRows.forEach(row => row.style.display = '');
+    toggleBtn.textContent = 'Switch to Gujarati';
+  }
+});

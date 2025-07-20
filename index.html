@@ -1,36 +1,1157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Shree 84 Samaj Kadva Patidar Family</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8" />
+  <title>84 Samaj Kadva Patidar Family</title>
+  <div style="text-align: center; margin-top: 10px;">
+ 
+</div>
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    /* Modal styles similar to your previous example */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      background-color: rgba(0, 0, 0, 0.6);
+    }
+    .modal-content {
+      background-color: #fff;
+      margin: 5% auto;
+      padding: 20px;
+      border-radius: 20px;
+      width: 80%;
+      max-width: 900px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    }
+    .close {
+      float: right;
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+      cursor: pointer;
+    }
+    .family-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .family-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+    }
+    .family-table .title-row td {
+      font-weight: bold;
+      text-align: center;
+      background: #f3f3f3;
+    }
+
+    .toggle-button {
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.toggle-button:hover {
+  background-color: #e64545;
+  transform: scale(1.05);
+}
+
+.gu {
+  display: none;
+}
+
+  </style>
 </head>
 <body>
-  <div class="header">Shree 84 Samaj Kadva Patidar Family</div>
+
+  <div class="header"> 84 Samaj Kadva Patidar Family, Melbourne</div>
+
+
+<div style="text-align: center; margin-top: 10px;">
+  <button id="languageToggle" class="toggle-button">Switch to Gujarati</button>
+</div>
 
   <div class="container">
-    <a href="form.html" class="add-member-btn">+ Add New Family Member</a>
-
-    <table class="grid-table" id="membersTable">
+    <table class="grid-table">
       <thead>
-        <tr><th>Family</th><th>Native</th><th>Suburb</th><th>More</th></tr>
+        <tr>
+          <th>Name</th>
+          <th>Native Place</th>
+          <th>Current Suburb</th>
+        </tr>
       </thead>
-      <tbody id="gridBody"></tbody>
+      <tbody id="gridBody">
+  <!-- AjayKumar Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-ajaykumar')">AjayKumar Patel</a></td>
+    <td>Adiwada</td>
+    <td>Clayton</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-ajaykumar')">અજયકુમાર પટેલ</a></td>
+    <td>અડિવાડા</td>
+    <td>ક્લેટન</td>
+  </tr>
+
+  <!-- ANILKUMAR MANUBHAI PATEL -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-anilkumar')">ANILKUMAR MANUBHAI PATEL</a></td>
+    <td>VENPURA (VISNAGAR)</td>
+    <td>Truganina</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-anilkumar')">અનિલકુમાર મનુભાઈ પટેલ</a></td>
+    <td>વેણપુરા (વિસનગર)</td>
+    <td>ટ્રૂગાનિના</td>
+  </tr>
+
+  <!-- Ankur Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-ankur')">Ankur Patel</a></td>
+    <td>Dhanodhrda</td>
+    <td>Clayton</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-ankur')">અંકુર પટેલ</a></td>
+    <td>ધનોધરડા</td>
+    <td>ક્લેટન</td>
+  </tr>
+
+  <!-- Arpana Vasantbhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-arpana')">Arpana Vasantbhai Patel</a></td>
+    <td>Pimpal</td>
+    <td>Tarneit</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-arpana')">અર્પણા વસંતભાઈ પટેલ</a></td>
+    <td>પીમ્પળ</td>
+    <td>ટાર્નાઇટ</td>
+  </tr>
+
+  <!-- Aryan Dilipkumar -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-aryan')">Aryan Dilipkumar</a></td>
+    <td>Vijapurda</td>
+    <td>Noble Park</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-aryan')">આર્યન દિલીપકુમાર</a></td>
+    <td>વિજાપુરડા</td>
+    <td>નોબલ પાર્ક</td>
+  </tr>
+
+  <!-- Asha -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-asha')">Asha</a></td>
+    <td>Chaveli</td>
+    <td>Tarneit</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-asha')">આશા</a></td>
+    <td>છવેલી</td>
+    <td>ટાર્નાઇટ</td>
+  </tr>
+
+  <!-- Ashishkumar Vishnubhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-ashishkumar')">ASHISHKUMAR VISHNUBHAI PATEL</a></td>
+    <td>Jetpur</td>
+    <td>2 KENLEY CT</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-ashishkumar')">આશિષકુમાર વિષ્ણુભાઈ પટેલ</a></td>
+    <td>જેટપુર</td>
+    <td>૨ કેનલી કોર્ટ</td>
+  </tr>
+
+  <!-- Bansari Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-bansari')">Bansari Patel</a></td>
+    <td>Adiwada</td>
+    <td>Clayton South, 3169</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-bansari')">બંસારિ પટેલ</a></td>
+    <td>અડિવાડા</td>
+    <td>ક્લેટન સાઉથ, ૩१६૯</td>
+  </tr>
+
+<tr class="en">
+    <td><a href="#" onclick="showModal('modal-bhavik')">Bhavik Ashokbhai Patel</a></td>
+    <td>Dhanodharda</td>
+    <td>Clayton, 3168</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-bhavik')">ભવિક અશોકભાઈ પટેલ</a></td>
+    <td>ધનોધરડા</td>
+    <td>ક્લેટન, ૩૧૬૮</td>
+  </tr>
+
+  <!-- Brijesh Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-brijesh')">Brijesh Patel</a></td>
+    <td>Ramoshna</td>
+    <td>Truganina, 3029</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-brijesh')">બ્રિજેશ પટેલ</a></td>
+    <td>રામોશના</td>
+    <td>ટ્રુગાનિના, ૩૦૨૯</td>
+  </tr>
+
+  <!-- Brijeshkumar -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-brijeshkumar')">Brijeshkumar</a></td>
+    <td>Piludara</td>
+    <td>Tarneit, 3029</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-brijeshkumar')">બ્રિજેશકુમાર</a></td>
+    <td>પિલુદારા</td>
+    <td>ટાર્નાઇટ, ૩૦૨૯</td>
+  </tr>
+
+  <!-- Chirag Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-chirag')">Chirag Patel</a></td>
+    <td>Ranela</td>
+    <td>Thomastown, 3074</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-chirag')">ચિરાગ પટેલ</a></td>
+    <td>રાણેલા</td>
+    <td>થોમાસટાઉન, ૩૦૭૪</td>
+  </tr>
+
+  <!-- Chiragkumar Vinodkumar Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-chiragkumar')">Chiragkumar Vinodkumar Patel</a></td>
+    <td>Anandpura (Panchot)</td>
+    <td>Pointcook, 3030</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-chiragkumar')">ચિરાગકુમાર વિનોદકુમાર પટેલ</a></td>
+    <td>આનંદપુરા (પંચોત)</td>
+    <td>પોઈન્ટકુક, ૩૦૩૦</td>
+  </tr>
+
+  <!-- Darshankumar Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-darshankumar')">Darshankumar Patel</a></td>
+    <td>Adiwada</td>
+    <td>Craigieburn, 3064</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-darshankumar')">દર્શંકુમાર પટેલ</a></td>
+    <td>અડિવાડા</td>
+    <td>ક્રેગીબર્ન, ૩૦૬૪</td>
+  </tr>
+
+  <!-- Deep Hareshbhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-deep')">Deep Hareshbhai Patel</a></td>
+    <td>Modhera</td>
+    <td>Hoppers Crossing</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-deep')">દીપ હરેશભાઈ પટેલ</a></td>
+    <td>મોધેરા</td>
+    <td>હોપર્સ ક્રોસિંગ</td>
+  </tr>
+
+  <!-- Dharmiben Hasmukhbhai -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-dharmiben')">Dharmiben Hasmukhbhai</a></td>
+    <td>Mandotri</td>
+    <td>A-22 Krishna Park, Viratnagar road, Odhav, Ahmedabad</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-dharmiben')">ધર્મીબેન હસમુખભાઈ</a></td>
+    <td>મંડોત્રી</td>
+    <td>એ-૨૨ કૃષ્ણા પાર્ક, વિરાટનગર રોડ, ઓઢવ, અમદાવાદ</td>
+  </tr>
+
+  <!-- Dhruval Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-dhruval')">Dhruval Patel</a></td>
+    <td>Dhinoj</td>
+    <td>Clayton, 3168</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-dhruval')">ધ્રુવલ પટેલ</a></td>
+    <td>ધિનોજ</td>
+    <td>ક્લેટન, ૩૧૬૮</td>
+  </tr>
+
+  <!-- Divyang Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-divyang')">Divyang Patel</a></td>
+    <td>Vishol</td>
+    <td>Clyde North</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-divyang')">દિવ્યांग પટેલ</a></td>
+    <td>વિશોલ</td>
+    <td>ક્લાઇડ નોર્થ</td>
+  </tr>
+
+  <!-- Foram Dilipbhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-foram')">Foram Dilipbhai Patel</a></td>
+    <td>Dediyasan</td>
+    <td>Thomastown</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-foram')">ફોરમ દિલીપભાઈ પટેલ</a></td>
+    <td>દેદીયાસણ</td>
+    <td>થોમાસ્ટાઉન</td>
+  </tr>
+
+  <!-- Gaurav Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-gaurav')">Gaurav Patel</a></td>
+    <td>Chanasma</td>
+    <td>Reservoir</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-gaurav')">ગૌરવ પટેલ</a></td>
+    <td>ચનાસમા</td>
+    <td>રિઝર્વાયર</td>
+  </tr>
+
+  <!-- Hardikkumar Babubhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-hardikkumar_babubhai')">Hardikkumar Babubhai Patel</a></td>
+    <td>Amudh (Unjha)</td>
+    <td>Bentleigh East</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-hardikkumar_babubhai')">હાર્દિકકુમાર બાબુભાઈ પટેલ</a></td>
+    <td>અમુધ (ઉંઝા)</td>
+    <td>બેન્ટલિ ઈસ્ટ</td>
+  </tr>
+
+  <!-- Hardikkumar Babulal Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-hardikkumar_babulal')">Hardikkumar Babulal Patel</a></td>
+    <td>Jakhana</td>
+    <td>Clayton South</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-hardikkumar_babulal')">હાર્દિકકુમાર બાબુલાલ પટેલ</a></td>
+    <td>જખાણા</td>
+    <td>ક્લેટન સાઉથ</td>
+  </tr>
+
+  <!-- Hardikkumar Chandulal Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-hardikkumar_chandulal')">Hardikkumar Chandulal Patel</a></td>
+    <td>Clayton South</td>
+    <td>Kilsyth</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-hardikkumar_chandulal')">હાર્દિકકુમાર ચંદુલાલ પટેલ</a></td>
+    <td>ક્લેટન સાઉથ</td>
+    <td>કિલ્સીથ</td>
+  </tr>
+
+  <!-- Harshilkumar Dhanjibhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-harshilkumar')">Harshilkumar Dhanjibhai Patel</a></td>
+    <td>Mithighariyal</td>
+    <td>Clayton</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-harshilkumar')">હર્ષીલકુમાર ધનજીભાઈ પટેલ</a></td>
+    <td>મીઠીઘરિયાળ</td>
+    <td>ક્લેટન</td>
+  </tr>
+
+  <!-- Harshkumar Rasikbhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-harshkumar_rasikbhai')">Harshkumar Rasikbhai Patel</a></td>
+    <td>Shihi</td>
+    <td>Clayton South</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-harshkumar_rasikbhai')">હર્ષકુમાર રસીકભાઈ પટેલ</a></td>
+    <td>શિહી</td>
+    <td>ક્લેટન સાઉથ</td>
+  </tr>
+
+  <!-- Hinal -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-hinal')">Hinal</a></td>
+    <td>Bokarvada</td>
+    <td>4, Howard place</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-hinal')">હિનલ</a></td>
+    <td>બોકરવાડા</td>
+    <td>૪, હાવર્ડ પ્લેસ</td>
+  </tr>
+
+  <!-- Indra Pravinbhai Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-indra_pravinbhai')">Indra Pravinbhai Patel</a></td>
+    <td>Mandotri</td>
+    <td>Carnegie</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-indra_pravinbhai')">ઈન્દ્રા પ્રવીણભાઈ પટેલ</a></td>
+    <td>મંડોત્રી</td>
+    <td>કારનેગી</td>
+  </tr>
+
+  <!-- Jagdishbhai M Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-jagdishbhai_m')">Jagdishbhai M Patel</a></td>
+    <td>MITHA</td>
+    <td>Kialla</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-jagdishbhai_m')">જગદીશભાઈ એમ પટેલ</a></td>
+    <td>મીઠા</td>
+    <td>કિયાલ્લા</td>
+  </tr>
+
+  <!-- Jaini Patel -->
+  <tr class="en">
+    <td><a href="#" onclick="showModal('modal-jaini')">Jaini Patel</a></td>
+    <td>Piludara</td>
+    <td>Tarneit</td>
+  </tr>
+  <tr class="gu">
+    <td><a href="#" onclick="showModal('modal-jaini')">જૈની પટેલ</a></td>
+    <td>પિલુદારા</td>
+    <td>ટાર્નાઇટ</td>
+  </tr>
+</tbody>
+
     </table>
   </div>
 
-  <div class="modal" id="memberModal">
-    <div class="modal-content" id="modalContent">
-      <span class="close" onclick="document.getElementById('memberModal').style.display='none'">&times;</span>
+  <!-- Modal for AjayKumar Patel -->
+  <div id="modal-ajaykumar" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-ajaykumar')">&times;</span>
+      <h2>AjayKumar Patel Family</h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="13" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td>AjayKumar Patel</td>
+          <td>Unmarried</td>
+        </tr>
+        <tr><td><b>Age:</b> 25</td><td><b>Marital Status:</b> Unmarried</td></tr>
+        <tr><td><b>Phone:</b> +61 470 331 611</td><td></td></tr>
+        <tr><td><b>Email:</b> ajp98798@gmail.com</td><td></td></tr>
+        <tr><td colspan="2"><b>Address:</b> Clayton, 3168</td></tr>
+        <tr><td><b>Village:</b> Adiwada</td><td><b>Mosal:</b> Maniyari</td></tr>
+        <tr><td colspan="2"><b>Occupation:</b> Petrol station</td></tr>
+        <tr><td colspan="2"><b>Spouse Details:</b> Unmarried</td></tr>
+      </table>
     </div>
   </div>
 
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-firestore.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/10.5.2/firebase-storage.js"></script>
+  <!-- Modal for ANILKUMAR MANUBHAI PATEL -->
+  <div id="modal-anilkumar" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-anilkumar')">&times;</span>
+      <h2>ANILKUMAR MANUBHAI PATEL Family</h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="16" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td>Anilkumar Manubhai Patel</td>
+          <td>Sweta Patel (Wife)</td>
+        </tr>
+        <tr><td><b>Age:</b> 45</td><td><b>DOB:</b> 7/02/1985</td></tr>
+        <tr><td><b>Phone:</b> +61 433 425 109</td><td><b>Phone:</b> 420403976.00</td></tr>
+        <tr><td><b>Email:</b> anil.unitedpetroleum@gmail.com</td><td><b>Email:</b> anil.unitedpetroleum@gmail.com</td></tr>
+        <tr><td><b>Address:</b> Truganina, 3029</td><td><b>Village:</b> Venpura (Visnagar)</td></tr>
+        <tr><td><b>Village:</b> Venpura (Visnagar)</td><td><b>Mosal:</b> Naranpura Kampa</td></tr>
+        <tr><td><b>Mosal:</b> Narayanpura Kampa</td><td><b>Occupation:</b> Business</td></tr>
+        <tr><td><b>Occupation:</b> Business</td><td></td></tr>
+        <tr><td><b>Marital Status:</b> Married</td><td><b>Children:</b> Yes</td></tr>
+        <tr><td colspan="2"><b>Children Details</b></td></tr>
+        <tr><td><b>Child 1:</b> Naitik Patel</td><td><b>DOB:</b> 15/02/2012</td></tr>
+        <tr><td><b>Child 2:</b> Rishi Patel</td><td><b>DOB:</b> 12/11/2015</td></tr>
+        <tr><td colspan="2"><b>Child 2 Occupation:</b> Student</td></tr>
+      </table>
+    </div>
+  </div>
 
-  <!-- App Script -->
-  <script type="module" src="js/script.js"></script>
+  <!-- Modal for Ankur Patel -->
+  <div id="modal-ankur" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-ankur')">&times;</span>
+      <h2>Ankur Patel Family</h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="15" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td>Ankur Patel</td>
+          <td>Bhumikaben Sureshbhai Patel (Wife)</td>
+        </tr>
+        <tr><td><b>Age:</b> 28</td><td><b>DOB:</b> 14/12/1996</td></tr>
+        <tr><td><b>Phone:</b> +61 435 049 677</td><td><b>Phone:</b> 0478 522 096</td></tr>
+        <tr><td><b>Email:</b> patelankur1218@vmail.com</td><td><b>Email:</b> Bhoomipatel2316@hmail.com</td></tr>
+        <tr><td><b>Address:</b> Clayton, 3168</td><td><b>Village:</b> Piludara</td></tr>
+        <tr><td><b>Village:</b> Dhanodhrda</td><td><b>Mosal:</b> Vijapurda</td></tr>
+        <tr><td><b>Mosal:</b> Palavasna</td><td><b>Occupation:</b> Accountants</td></tr>
+        <tr><td><b>Occupation:</b> Electrical Engineer</td><td></td></tr>
+        <tr><td><b>Marital Status:</b> Married</td><td><b>Children:</b> No</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal for Arpana Vasantbhai Patel -->
+  <div id="modal-arpana" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-arpana')">&times;</span>
+      <h2>Arpana Vasantbhai Patel Family</h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="14" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td>Arpana Vasantbhai Patel</td>
+          <td>Meetkumar Rakeshbhai Patel (Husband)</td>
+        </tr>
+        <tr><td><b>Age:</b> 26</td><td><b>DOB:</b> 16/05/1997</td></tr>
+        <tr><td><b>Phone:</b> +61 422 908 500</td><td><b>Phone:</b> 422466061.00</td></tr>
+        <tr><td><b>Email:</b> arpanapatel704@gmail.com</td><td><b>Email:</b> meetp0756@gamil.com</td></tr>
+        <tr><td><b>Address:</b> Tarneit, 3029</td><td><b>Village:</b> Maktupur</td></tr>
+        <tr><td><b>Village:</b> Pimpal</td><td><b>Mosal:</b> Ahmedabad</td></tr>
+        <tr><td><b>Mosal:</b> Chanasma</td><td><b>Occupation:</b> Team Leader</td></tr>
+        <tr><td><b>Occupation:</b> Student</td><td><b>Children:</b> No</td></tr>
+        <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal for Aryan Dilipkumar -->
+  <div id="modal-aryan" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-aryan')">&times;</span>
+      <h2>Aryan Dilipkumar Family</h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="13" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td>Aryan Dilipkumar</td>
+          <td>Unmarried</td>
+        </tr>
+        <tr><td><b>Age:</b> 25</td><td><b>Marital Status:</b> Unmarried</td></tr>
+        <tr><td><b>Phone:</b> +61 472 573 557</td><td></td></tr>
+        <tr><td><b>Email:</b> aryanpatel2340@gmail.com</td><td></td></tr>
+        <tr><td><b>Address:</b> Noble Park, 3174</td><td></td></tr>
+        <tr><td><b>Village:</b> Vijapurda</td><td></td></tr>
+        <tr><td><b>Mosal:</b> Chhetasana</td><td></td></tr>
+        <tr><td><b>Occupation:</b> No</td><td></td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Modal for Asha -->
+  <div id="modal-asha" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('modal-asha')">&times;</span>
+      <h2>Asha Family</h2>
+      <table class="family-table">
+        <tr class="title-row">
+          <td rowspan="16" style="text-align:center; width: 200px;">
+            <img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px; border-radius:10px;" />
+          </td>
+          <td>Asha</td>
+          <td>Tejas Patel (Husband)</td>
+        </tr>
+        <tr><td><b>Age:</b> 44</td><td><b>DOB:</b> 11/10/1980</td></tr>
+        <tr><td><b>Phone:</b> +61 433 943 421</td><td><b>Phone:</b> 433111554.00</td></tr>
+        <tr><td><b>Email:</b> ashatejaspatel@yahoo.co.in</td><td><b>Email:</b> ashatejaspatel@yahoo.co.in</td></tr>
+        <tr><td><b>Address:</b> Tarneit, 3029</td><td><b>Village:</b> Wamaj</td></tr>
+        <tr><td><b>Village:</b> Chaveli</td><td><b>Mosal:</b> Gozaria</td></tr>
+        <tr><td><b>Mosal:</b> Jetpur</td><td><b>Occupation:</b> Self Employed</td></tr>
+        <tr><td><b>Occupation:</b> Self Employed</td><td><b>Children:</b> Yes</td></tr>
+        <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+        <tr><td colspan="2"><b>Children Details:</b></td></tr>
+        <tr><td><b>Child 1:</b> Archi</td><td><b>DOB:</b> 4/06/2005</td></tr>
+        <tr><td><b>Child 2:</b> Shanaya</td><td><b>DOB:</b> 21/11/2015</td></tr>
+         <tr>
+      
+      </table>
+    </div>
+  </div>
+
+
+  <!-- Modal for Ashishkumar Vishnubhai Patel -->
+<div id="modal-ashishkumar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-ashishkumar')">&times;</span>
+    <h2>Ashishkumar Vishnubhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Ashishkumar Vishnubhai Patel</td>
+        <td>Married</td>
+      </tr>
+      <tr><td><b>Age:</b> 31</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 481 340 747</td><td><b>Email:</b> ashish.patel106014@gmail.com</td></tr>
+      <tr><td><b>Address:</b> 2 KENLEY CT</td><td><b>Village:</b> Jetpur</td></tr>
+      <tr><td><b>Mosal:</b> Modhera</td><td><b>Occupation:</b> Project Engineer - Major Projects Australia</td></tr>
+      <tr><td colspan="2"><b>Spouse:</b> Shreya Ashishkumar Patel | DOB: 22/08/1994 | Phone: 403075273 | Email: imshreya1994@gmail.com | Village: Vadodara | Mosal: Bharuch | Occupation: Homeopath Doctor/Health Assistant</b></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Bansari Patel -->
+<div id="modal-bansari" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-bansari')">&times;</span>
+    <h2>Bansari Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Bansari Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 29</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 432 977 817</td><td><b>Email:</b> bansiipatel25.bp@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Clayton South, 3169</td><td><b>Village:</b> Adiwada</td></tr>
+      <tr><td><b>Mosal:</b> Deloli</td><td><b>Occupation:</b> Physiotherapist</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Bhavik Ashokbhai Patel -->
+<div id="modal-bhavik" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-bhavik')">&times;</span>
+    <h2>Bhavik Ashokbhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Bhavik Ashokbhai Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 32</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 468 443 343</td><td><b>Email:</b> bhavik.p.1893@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Clayton, 3168</td><td><b>Village:</b> Dhanodharda</td></tr>
+      <tr><td><b>Mosal:</b> Jetpur</td><td><b>Occupation:</b> Student</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Brijesh Patel -->
+<div id="modal-brijesh" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-brijesh')">&times;</span>
+    <h2>Brijesh Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Brijesh Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 26</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 421 259 434</td><td><b>Email:</b> brijeshpatel96500@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Truganina, 3029</td><td><b>Village:</b> Ramoshna</td></tr>
+      <tr><td><b>Mosal:</b> Surajnagar (dadhi)</td><td><b>Occupation:</b> JOB</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Brijeshkumar -->
+<div id="modal-brijeshkumar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-brijeshkumar')">&times;</span>
+    <h2>Brijeshkumar Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Brijeshkumar</td>
+        <td>Married</td>
+      </tr>
+      <tr><td><b>Age:</b> 29</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 493 970 938</td><td><b>Email:</b> Patelbrijeshp183@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Tarneit, 3029</td><td><b>Village:</b> Piludara</td></tr>
+      <tr><td><b>Mosal:</b> Dhinoj</td><td><b>Occupation:</b> Job</td></tr>
+      <tr><td colspan="2"><b>Spouse:</b> Hani Patel | DOB: 2/01/2002 | Phone: 493970938 | Email: Patelbrijeshp183@gmail.com | Village: Palasar | Mosal: Unjha | Occupation: Job</b></td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Chirag Patel -->
+<div id="modal-chirag" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-chirag')">&times;</span>
+    <h2>Chirag Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Chirag Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 32</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 468 441 093</td><td><b>Email:</b> Chiragpatel3736@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Thomastown, 3074</td><td><b>Village:</b> Ranela</td></tr>
+      <tr><td><b>Mosal:</b> Kanoda</td><td><b>Occupation:</b> Mechanic</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Chiragkumar Vinodkumar Patel -->
+<div id="modal-chiragkumar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-chiragkumar')">&times;</span>
+    <h2>Chiragkumar Vinodkumar Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Chiragkumar Vinodkumar Patel</td>
+        <td>Married</td>
+      </tr>
+      <tr><td><b>Age:</b> 30</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 481 810 652</td><td><b>Email:</b> Chiragvp14@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Pointcook, 3030</td><td><b>Village:</b> Anandpura (panchot)</td></tr>
+      <tr><td><b>Mosal:</b> Kansa (visnagar)</td><td><b>Occupation:</b> Contractor in courier please.</td></tr>
+      <tr><td colspan="2"><b>Spouse:</b> Foramben Patel | DOB: 15/06/1995 | Phone: 414900652 | Email: Frmsidiya@gmail.com | Village: Mesra (panchasar) | Mosal: Vadavali | Occupation: Diploma Early Childcare Educator</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Modal for Darshankumar Patel -->
+<div id="modal-darshankumar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-darshankumar')">&times;</span>
+    <h2>Darshankumar Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13"><img src="images/Mickey_Mouse_normal.webp" alt="Family Photo" style="width:180px;"></td>
+        <td>Darshankumar Patel</td>
+        <td>Married</td>
+      </tr>
+      <tr><td><b>Age:</b> 43</td><td><b>DOB:</b> N/A</td></tr>
+      <tr><td><b>Phone:</b> +61 430 176 051</td><td><b>Email:</b> Darshan_2910@yahoo.com</td></tr>
+      <tr><td><b>Address:</b> Craigieburn, 3064</td><td><b>Village:</b> Adiwada</td></tr>
+      <tr><td><b>Mosal:</b> Mehmadpur</td><td><b>Occupation:</b> Master Data Lead</td></tr>
+      <tr><td colspan="2"><b>Spouse:</b> Hina Patel | DOB: 25/03/1983 | Phone: 432244406 | Occupation: RN | Village: Motap</td></tr>
+      <tr><td colspan="2"><b>Children:</b> Shanaya Patel (DOB: 13/08/2014), Siya Patel (DOB: 2/03/2018)</td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-deep" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-deep')">&times;</span>
+    <h2>Deep Hareshbhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Deep Hareshbhai Patel" />
+        </td>
+        <td>Deep Hareshbhai Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 24</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 435 385 436</td><td></td></tr>
+      <tr><td><b>Email:</b> dhpatel1805@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Hoppers Crossing, 3029</td><td></td></tr>
+      <tr><td><b>Village:</b> Modhera</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Hinglajpura</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Warehouse</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-dharmiben" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-dharmiben')">&times;</span>
+    <h2>Dharmiben Hasmukhbhai Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Dharmiben Hasmukhbhai" />
+        </td>
+        <td>Dharmiben Hasmukhbhai</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 25</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 493 667 719</td><td></td></tr>
+      <tr><td><b>Email:</b> dharmi5102@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> A-22 Krishna Park, Viratnagar road, Odhav, Ahmedabad</td><td></td></tr>
+      <tr><td><b>Village:</b> Mandotri</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Dharpur</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Current nursing Student</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-dhruval" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-dhruval')">&times;</span>
+    <h2>Dhruval Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Dhruval Patel" />
+        </td>
+        <td>Dhruval Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 26</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 468 457 578</td><td></td></tr>
+      <tr><td><b>Email:</b> dhruvalrakeshpatel@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Clayton, 3168</td><td></td></tr>
+      <tr><td><b>Village:</b> Dhinoj</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Mithivavdi</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Registered Nurse</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-divyang" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-divyang')">&times;</span>
+    <h2>Divyang Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="14" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Divyang Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Divyang Patel</td>
+        <td>Kruti Patel (Wife)</td>
+      </tr>
+      <tr><td><b>Age:</b> 39</td><td><b>DOB:</b> 26/06/1987</td></tr>
+      <tr><td><b>Phone:</b> +61 421 166 191</td><td><b>Phone:</b> 468312346</td></tr>
+      <tr><td><b>Email:</b> Divyang.patel@outlook.com</td><td><b>Email:</b> Krutimshukla@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Clyde North, 3978</td><td><b>Village:</b> Ahmedabad</td></tr>
+      <tr><td><b>Village:</b> Vishol</td><td><b>Mosal:</b> Ahmedabad</td></tr>
+      <tr><td><b>Mosal:</b> —</td><td><b>Occupation:</b> Business coach</td></tr>
+      <tr><td><b>Occupation:</b> IT Manager</td><td><b>Children:</b> Yes</td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+      <tr><td colspan="2"><b>Children Details:</b></td></tr>
+      <tr><td><b>Child 1:</b> Advit Patel</td><td><b>DOB:</b> 13/04/2018</td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-foram" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-foram')">&times;</span>
+    <h2>Foram Dilipbhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Foram Dilipbhai Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Foram Dilipbhai Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 26</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 493 642 447</td><td></td></tr>
+      <tr><td><b>Email:</b> patelforam9903@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Thomastown, 3074</td><td></td></tr>
+      <tr><td><b>Village:</b> Dediyasan</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Chaveli</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Personal care worker</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-gaurav" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-gaurav')">&times;</span>
+    <h2>Gaurav Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Gaurav Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Gaurav Patel</td>
+        <td>Khushi Patel (Wife)</td>
+      </tr>
+      <tr><td><b>Age:</b> 28</td><td><b>DOB:</b> 19/06/2000</td></tr>
+      <tr><td><b>Phone:</b> +61 414 738 561</td><td></td></tr>
+      <tr><td><b>Email:</b> gaurav.jay1997@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Reservoir, 3335</td><td></td></tr>
+      <tr><td><b>Village:</b> Chanasma</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Piludara</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Job</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+      <tr><td colspan="2"><b>Children Details:</b></td></tr>
+      <tr><td><b>Child 1:</b> No children</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-hardikkumar_babubhai" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-hardikkumar_babubhai')">&times;</span>
+    <h2>Hardikkumar Babubhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Hardikkumar Babubhai Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Hardikkumar Babubhai Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 28</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 431 071 108</td><td></td></tr>
+      <tr><td><b>Email:</b> hardikpatel.3682@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Bentleigh East, 3165</td><td></td></tr>
+      <tr><td><b>Village:</b> Amudh (Unjha)</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Kamliwada (Patan)</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Work in warehouse</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-hardikkumar_babulal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-hardikkumar_babulal')">&times;</span>
+    <h2>Hardikkumar Babulal Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="16" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Hardikkumar Babulal Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Hardikkumar Babulal Patel</td>
+        <td>Jignasha Hardikkumar Patel (Wife)</td>
+      </tr>
+      <tr><td><b>Age:</b> 36</td><td><b>DOB:</b> 19/09/1991</td></tr>
+      <tr><td><b>Phone:</b> +61 439 748 026</td><td><b>Phone:</b> 439748024</td></tr>
+      <tr><td><b>Email:</b> Hardikpatel_28689@yahoo.com</td><td><b>Email:</b> Jignashardik@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Clayton South, 3169</td><td><b>Village:</b> Sunok</td></tr>
+      <tr><td><b>Village:</b> Jakhana</td><td><b>Mosal:</b> Bhunav</td></tr>
+      <tr><td><b>Mosal:</b> Mithi Vavdi</td><td><b>Occupation:</b> House wife</td></tr>
+      <tr><td><b>Occupation:</b> Chef</td><td><b>Children:</b> Yes</td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+      <tr><td colspan="2"><b>Children Details:</b></td></tr>
+      <tr><td><b>Child 1:</b> Mayra Hardikkumar Patel</td><td><b>DOB:</b> 2/11/2018</td></tr>
+      <tr><td><b>Child 2:</b> Aarvi Hardikkumar Patel</td><td><b>DOB:</b> 19/02/2021</td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-hardikkumar_chandulal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-hardikkumar_chandulal')">&times;</span>
+    <h2>Hardikkumar Chandulal Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="13" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Hardikkumar Chandulal Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Hardikkumar Chandulal Patel</td>
+        <td>Poonam Hardik Patel (Wife)</td>
+      </tr>
+      <tr><td><b>Age:</b> 31</td><td><b>DOB:</b> 28/07/1995</td></tr>
+      <tr><td><b>Phone:</b> +61 466 390 101</td><td><b>Phone:</b> 466747479</td></tr>
+      <tr><td><b>Email:</b> hardikcpatel28@gmail.com</td><td><b>Email:</b> poonampatel4257@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Kilsyth, 3137</td><td><b>Village:</b> Pimpal</td></tr>
+      <tr><td><b>Village:</b> Clayton South</td><td><b>Mosal:</b> Chanasma</td></tr>
+      <tr><td><b>Mosal:</b> Khorsam</td><td><b>Occupation:</b> Job</td></tr>
+      <tr><td><b>Occupation:</b> Job</td><td><b>Children:</b> No</td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-harshilkumar" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-harshilkumar')">&times;</span>
+    <h2>Harshilkumar Dhanjibhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Harshilkumar Dhanjibhai Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Harshilkumar Dhanjibhai Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 27</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 488 135 273</td><td></td></tr>
+      <tr><td><b>Email:</b> harshilhp11@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Clayton, 3168</td><td></td></tr>
+      <tr><td><b>Village:</b> Mithighariyal</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Ranela</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Job</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-harshkumar_rasikbhai" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-harshkumar_rasikbhai')">&times;</span>
+    <h2>Harshkumar Rasikbhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="14" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Harshkumar Rasikbhai Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Harshkumar Rasikbhai Patel</td>
+        <td>Smitaben Jitendrabhai Patel (Wife)</td>
+      </tr>
+      <tr><td><b>Age:</b> 31</td><td><b>DOB:</b> 17/10/1997</td></tr>
+      <tr><td><b>Phone:</b> +61 468 419 218</td><td><b>Phone:</b> 468474358</td></tr>
+      <tr><td><b>Email:</b> harsh.guru1223@gmail.com</td><td><b>Email:</b> patelsmita1617@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Clayton South, 3169</td><td><b>Village:</b> Kamli</td></tr>
+      <tr><td><b>Village:</b> Shihi</td><td><b>Mosal:</b> Soneripura</td></tr>
+      <tr><td><b>Mosal:</b> Norta</td><td><b>Occupation:</b> None</td></tr>
+      <tr><td><b>Occupation:</b> Mechanical Engineer</td><td><b>Children:</b> No</td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-hinal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-hinal')">&times;</span>
+    <h2>Hinal Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="15" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Hinal" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Hinal</td>
+        <td>Vishal (Husband)</td>
+      </tr>
+      <tr><td><b>Age:</b> 36</td><td><b>DOB:</b> 4/10/1989</td></tr>
+      <tr><td><b>Phone:</b> +61 414 719 199</td><td><b>Phone:</b> 466426484</td></tr>
+      <tr><td><b>Email:</b> hinalp2016@gmail.com</td><td><b>Email:</b> Kopefood@gmail.com</td></tr>
+      <tr><td><b>Address:</b> 4, Howard place</td><td><b>Village:</b> Vijapur</td></tr>
+      <tr><td><b>Village:</b> Bokarvada</td><td><b>Mosal:</b> Dhanpura</td></tr>
+      <tr><td><b>Mosal:</b> Kamlivada</td><td><b>Occupation:</b> Quantity Surveyer</td></tr>
+      <tr><td><b>Occupation:</b> Nursing & midwifery</td><td><b>Children:</b> Yes</td></tr>
+      <tr><td colspan="2"><b>Children Details:</b></td></tr>
+      <tr><td><b>Child 1:</b> Sahaj</td><td><b>DOB:</b> 10/11/2015</td></tr>
+      <tr><td><b>Child 2:</b> Pahal</td><td><b>DOB:</b> 10/09/2020 (Student)</td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-indra_pravinbhai" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-indra_pravinbhai')">&times;</span>
+    <h2>Indra Pravinbhai Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="9" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Indra Pravinbhai Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Indra Pravinbhai Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 28</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 466 997 664</td><td></td></tr>
+      <tr><td><b>Email:</b> indrappatel97@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Carnegie, 3163</td><td></td></tr>
+      <tr><td><b>Village:</b> Mandotri</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Kamli</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Student</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-jagdishbhai_m" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-jagdishbhai_m')">&times;</span>
+    <h2>Jagdishbhai M Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="16" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Jagdishbhai M Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Jagdishbhai M Patel</td>
+        <td>Meenaben Patel (Wife)</td>
+      </tr>
+      <tr><td><b>Age:</b> 53</td><td><b>DOB:</b> 6/01/1969</td></tr>
+      <tr><td><b>Phone:</b> +61 413 042 443</td><td><b>Phone:</b> 413042443</td></tr>
+      <tr><td><b>Email:</b> Jpatel26596@gmail.com</td><td><b>Email:</b> Jpatel26596@gmail.com</td></tr>
+      <tr><td><b>Address:</b> Kialla, 3631</td><td><b>Village:</b> Bodla</td></tr>
+      <tr><td><b>Village:</b> MITHA</td><td><b>Mosal:</b> Dabhi</td></tr>
+      <tr><td><b>Mosal:</b> Dabhi</td><td><b>Occupation:</b> Farmer</td></tr>
+      <tr><td><b>Occupation:</b> Housewife</td><td><b>Children:</b> Yes</td></tr>
+      <tr><td><b>Marital Status:</b> Married</td><td></td></tr>
+      <tr><td colspan="2"><b>Children Details:</b></td></tr>
+      <tr><td><b>Child 1:</b> Patel Raj</td><td><b>DOB:</b> 16/06/1989</td></tr>
+      <tr><td><b>Child 2:</b> Patel Jay</td><td><b>DOB:</b> 23/09/1991</td></tr>
+      <tr><td><b>Child 3:</b> Patel Neel</td><td><b>DOB:</b> 01/12/1994</td></tr>
+      <tr><td><b>Child 4:</b> Patel Bhavesh</td><td><b>DOB:</b> 03/02/1997</td></tr>
+    </table>
+  </div>
+</div>
+
+<div id="modal-jaini" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-jaini')">&times;</span>
+    <h2>Jaini Patel Family</h2>
+    <table class="family-table">
+      <tr class="title-row">
+        <td rowspan="7" style="text-align:center; width: 200px;">
+          <img src="images/default-family-photo.webp" alt="Jaini Patel" style="width:180px; border-radius:10px;" />
+        </td>
+        <td>Jaini Patel</td>
+        <td>Unmarried</td>
+      </tr>
+      <tr><td><b>Age:</b> 29</td><td></td></tr>
+      <tr><td><b>Phone:</b> +61 435 899 121</td><td></td></tr>
+      <tr><td><b>Email:</b> jainipatel@gmail.com</td><td></td></tr>
+      <tr><td><b>Address:</b> Tarneit, 3029</td><td></td></tr>
+      <tr><td><b>Village:</b> Piludara</td><td></td></tr>
+      <tr><td><b>Mosal:</b> Kamliwada</td><td></td></tr>
+      <tr><td><b>Occupation:</b> Nurse</td><td></td></tr>
+      <tr><td><b>Marital Status:</b> Unmarried</td><td></td></tr>
+    </table>
+  </div>
+</div>
+
+
+
+
+  <script>
+    function showModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      const modals = document.querySelectorAll(".modal");
+      modals.forEach(modal => {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      });
+    };
+  </script>
+
 </body>
 </html>
