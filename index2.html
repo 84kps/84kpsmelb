@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Shree 84 Samaj Kadva Patidar Family</title>
+<style>
+  /* Styles as provided earlier */
+  body {
+    font-family: Arial, sans-serif;
+    background: #f9f9f9;
+    margin: 0;
+    padding: 0;
+  }
+  .header {
+    text-align: center;
+    background: #c9a5a5;
+    padding: 30px 15px;
+    font-size: 2em;
+    font-weight: bold;
+    color: black;
+    box-shadow: inset -5px -5px 0 #4a4444;
+  }
+  .container {
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+  .grid-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  .grid-table th,
+  .grid-table td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+  }
+  .grid-table th {
+    background-color: #e9ebf2;
+    color: #3b4a70;
+  }
+  .grid-table a {
+    color: #1a73e8;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  .grid-table a:hover {
+    text-decoration: underline;
+  }
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+  .modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 80%;
+    max-width: 900px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    position: relative;
+  }
+  .close {
+    float: right;
+    font-size: 24px;
+    font-weight: bold;
+    color: red;
+    cursor: pointer;
+  }
+  .close:hover,
+  .close:focus {
+    color: black;
+  }
+  @media (max-width: 768px) {
+    .grid-table,
+    .grid-table thead,
+    .grid-table tbody,
+    .grid-table th,
+    .grid-table td,
+    .grid-table tr {
+      display: block;
+      width: 100%;
+    }
+    .grid-table thead {
+      display: none;
+    }
+    .grid-table tr {
+      margin-bottom: 15px;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+    .grid-table td {
+      text-align: left;
+      padding: 10px;
+      position: relative;
+    }
+    .grid-table td::before {
+      content: attr(data-label);
+      font-weight: bold;
+      display: block;
+      color: #555;
+    }
+  }
+  #languageToggleContainer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin: 10px 20px;
+  }
+  #languageToggleLabel {
+    margin-right: 8px;
+    font-weight: bold;
+    user-select: none;
+  }
+  input[type="checkbox"] {
+    width: 40px;
+    height: 20px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<div class="header">Shree 84 Samaj Kadva Patidar Family</div>
+
+<div id="languageToggleContainer">
+  <label id="languageToggleLabel" for="languageToggle">Gujarati</label>
+  <input type="checkbox" id="languageToggle" />
+</div>
+
+<div class="container">
+  <table class="grid-table" aria-label="Family Members Directory">
+    <thead>
+      <tr>
+        <th>Name / નામ</th>
+        <th>Native Place / સ્થાનિક</th>
+        <th>Current Suburb / વર્તમાન વિસ્તર</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Rows generated for each member -->
+
+      <!-- Ajaykumar -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-ajaykumar')">Ajaykumar Patel</a></td>
+        <td data-label="Native Place">Adiwada</td>
+        <td data-label="Current Suburb">Clayton</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-ajaykumar')">અજયકુમાર પટેલ</a></td>
+        <td data-label="સ્થાનિક">આદિવાડા</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન</td>
+      </tr>
+
+      <!-- Bhavik -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-bhavik')">Bhavik Ashokbhai Patel</a></td>
+        <td data-label="Native Place">Dhanodharda</td>
+        <td data-label="Current Suburb">Clayton</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-bhavik')">ભાવિક અશોકભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">ધનોધરડા</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન</td>
+      </tr>
+
+      <!-- Brijesh -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-brijesh')">Brijesh Patel</a></td>
+        <td data-label="Native Place">Ramoshna</td>
+        <td data-label="Current Suburb">Truganina</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-brijesh')">બ્રિજેશ પટેલ</a></td>
+        <td data-label="સ્થાનિક">રમોશના</td>
+        <td data-label="વર્તમાન વિસ્તર">ટ્રુગાનિના</td>
+      </tr>
+
+      <!-- Brijeshkumar -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-brijeshkumar')">Brijeshkumar Patel</a></td>
+        <td data-label="Native Place">Piludara</td>
+        <td data-label="Current Suburb">Tarneit</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-brijeshkumar')">બ્રિજેશકુમાર પટેલ</a></td>
+        <td data-label="સ્થાનિક">પિલુદરા</td>
+        <td data-label="વર્તમાન વિસ્તર">ટાર્નીટ</td>
+      </tr>
+
+      <!-- Chirag -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-chirag')">Chirag Patel</a></td>
+        <td data-label="Native Place">Ranela</td>
+        <td data-label="Current Suburb">Thomastown</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-chirag')">ચિરાગ પટેલ</a></td>
+        <td data-label="સ્થાનિક">રાણેલા</td>
+        <td data-label="વર્તમાન વિસ્તર">થોમાસ્ટાઉન</td>
+      </tr>
+
+      <!-- Chiragkumar -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-chiragkumar')">Chiragkumar Vinodkumar Patel</a></td>
+        <td data-label="Native Place">Anandpura (Panchot)</td>
+        <td data-label="Current Suburb">Pointcook</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-chiragkumar')">ચિરાગકુમાર વિનોદકુમાર પટેલ</a></td>
+        <td data-label="સ્થાનિક">આનંદપુરા (પંચોટ)</td>
+        <td data-label="વર્તમાન વિસ્તર">પોઈન્ટકૂક</td>
+      </tr>
+
+      <!-- Darshankumar -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-darshankumar')">Darshankumar Patel</a></td>
+        <td data-label="Native Place">Adiwada</td>
+        <td data-label="Current Suburb">Craigieburn</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-darshankumar')">દર્શંકુમાર પટેલ</a></td>
+        <td data-label="સ્થાનિક">આદિવાડા</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્રેગિબર્ન</td>
+      </tr>
+
+      <!-- Deep -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-deep')">Deep Hareshbhai Patel</a></td>
+        <td data-label="Native Place">Modhera</td>
+        <td data-label="Current Suburb">Hoppers Crossing</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-deep')">દીપ હરીશભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">મોઢેરા</td>
+        <td data-label="વર્તમાન વિસ્તર">હોપર્સ ક્રોસિંગ</td>
+      </tr>
+
+      <!-- Dharmiben -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-dharmiben')">Dharmiben Hasmukhbhai</a></td>
+        <td data-label="Native Place">Mandotri</td>
+        <td data-label="Current Suburb">Odhav, Ahmedabad</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-dharmiben')">ધર્મીબેન હસમુખભાઈ</a></td>
+        <td data-label="સ્થાનિક">મંડોત્રી</td>
+        <td data-label="વર્તમાન વિસ્તર">ઓઢાવ, અમદાવાદ</td>
+      </tr>
+
+      <!-- Dhruval -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-dhruval')">Dhruval Patel</a></td>
+        <td data-label="Native Place">Dhinoj</td>
+        <td data-label="Current Suburb">Clayton</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-dhruval')">ધ્રુવાલ પટેલ</a></td>
+        <td data-label="સ્થાનિક">ધિનોજ</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન</td>
+      </tr>
+
+      <!-- Divyang -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-divyang')">Divyang Patel</a></td>
+        <td data-label="Native Place">Vishol</td>
+        <td data-label="Current Suburb">Clyde North</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-divyang')">દિવ્યાંગ પટેલ</a></td>
+        <td data-label="સ્થાનિક">વિશોલ</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લાઈડ નોર્થ</td>
+      </tr>
+
+      <!-- Foram -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-foram')">Foram Dilipbhai Patel</a></td>
+        <td data-label="Native Place">Dediyasan</td>
+        <td data-label="Current Suburb">Thomastown</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-foram')">ફોરમ દિલીપભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">દેડીયાસણ</td>
+        <td data-label="વર્તમાન વિસ્તર">થોમાસ્ટાઉન</td>
+      </tr>
+
+      <!-- Gaurav -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-gaurav')">Gaurav Patel</a></td>
+        <td data-label="Native Place">Chanasma</td>
+        <td data-label="Current Suburb">Reservoir</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-gaurav')">ગૌરવ પટેલ</a></td>
+        <td data-label="સ્થાનિક">ચનાસમા</td>
+        <td data-label="વર્તમાન વિસ્તર">રિઝર્વોઇર</td>
+      </tr>
+
+      <!-- Hardikkumar Babubhai -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-hardikkumar_babubhai')">Hardikkumar Babubhai Patel</a></td>
+        <td data-label="Native Place">Amudh (Unjha)</td>
+        <td data-label="Current Suburb">Bentleigh East</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-hardikkumar_babubhai')">હાર્દિકકુમાર બાબુભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">અમુધ (ઉંઝા)</td>
+        <td data-label="વર્તમાન વિસ્તર">બેન્ટલિ ઇસ્ટ</td>
+      </tr>
+
+      <!-- Hardikkumar Babulal -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-hardikkumar_babulal')">Hardikkumar Babulal Patel</a></td>
+        <td data-label="Native Place">Jakhana</td>
+        <td data-label="Current Suburb">Clayton South</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-hardikkumar_babulal')">હાર્દિકકુમાર બાબુલાલ પટેલ</a></td>
+        <td data-label="સ્થાનિક">જાખાણા</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન સાઉથ</td>
+      </tr>
+
+      <!-- Hardikkumar Chandulal -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-hardikkumar_chandulal')">Hardikkumar Chandulal Patel</a></td>
+        <td data-label="Native Place">Clayton South</td>
+        <td data-label="Current Suburb">Kilsyth</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-hardikkumar_chandulal')">હાર્દિકકુમાર ચંદુલાલ પટેલ</a></td>
+        <td data-label="સ્થાનિક">ક્લેટન સાઉથ</td>
+        <td data-label="વર્તમાન વિસ્તર">કિલસાઈથ</td>
+      </tr>
+
+      <!-- Harshilkumar -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-harshilkumar')">Harshilkumar Dhanjibhai Patel</a></td>
+        <td data-label="Native Place">Mithighariyal</td>
+        <td data-label="Current Suburb">Clayton</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-harshilkumar')">હર્ષિલકુમાર ધનજીભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">મીઠીઘારિયાળ</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન</td>
+      </tr>
+
+      <!-- Harshkumar Rasikbhai -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-harshkumar_rasikbhai')">Harshkumar Rasikbhai Patel</a></td>
+        <td data-label="Native Place">Mithighariyal</td>
+        <td data-label="Current Suburb">Clayton</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-harshkumar_rasikbhai')">હર્ષકુમાર રાસિકભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">મીઠીઘારિયાળ</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન</td>
+      </tr>
+
+      <!-- Hinal -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-hinal')">Hinal Patel</a></td>
+        <td data-label="Native Place">Chitroda</td>
+        <td data-label="Current Suburb">Clayton</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-hinal')">હિનલ પટેલ</a></td>
+        <td data-label="સ્થાનિક">ચિત્રોદા</td>
+        <td data-label="વર્તમાન વિસ્તર">ક્લેટન</td>
+      </tr>
+
+      <!-- Indra -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-indra')">Indra Patel</a></td>
+        <td data-label="Native Place">Pipalia</td>
+        <td data-label="Current Suburb">Hoppers Crossing</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-indra')">ઇન્દ્રા પટેલ</a></td>
+        <td data-label="સ્થાનિક">પિપાલિયા</td>
+        <td data-label="વર્તમાન વિસ્તર">હોપર્સ ક્રોસિંગ</td>
+      </tr>
+
+      <!-- Jagdishbhai -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-jagdishbhai')">Jagdishbhai Patel</a></td>
+        <td data-label="Native Place">Anandpura</td>
+        <td data-label="Current Suburb">Melbourne</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-jagdishbhai')">જગદીશભાઈ પટેલ</a></td>
+        <td data-label="સ્થાનિક">આનંદપુરા</td>
+        <td data-label="વર્તમાન વિસ્તર">મેલબોર્ન</td>
+      </tr>
+
+      <!-- Jaini -->
+      <tr class="en">
+        <td data-label="Name"><a href="#" onclick="showModal('modal-jaini')">Jaini Patel</a></td>
+        <td data-label="Native Place">Modhera</td>
+        <td data-label="Current Suburb">Melbourne</td>
+      </tr>
+      <tr class="gu" style="display:none;">
+        <td data-label="નામ"><a href="#" onclick="showModal('modal-jaini')">જૈની પટેલ</a></td>
+        <td data-label="સ્થાનિક">મોઢેરા</td>
+        <td data-label="વર્તમાન વિસ્તર">મેલબોર્ન</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+<!-- Modals Section -->
+
+<!-- Example modal format for each member -->
+
+<!-- Ajaykumar Modal -->
+<div id="modal-ajaykumar" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalAjayTitle" tabindex="-1">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-ajaykumar')" aria-label="Close Modal">&times;</span>
+    <h2 id="modalAjayTitle" class="en">Ajaykumar Patel Details</h2>
+    <h2 class="gu" style="display:none;">અજયકુમાર પટેલ વિગતવાર</h2>
+
+    <p class="en"><strong>Native Place:</strong> Adiwada</p>
+    <p class="gu" style="display:none;"><strong>સ્થાનિક:</strong> આદિવાડા</p>
+
+    <p class="en"><strong>Current Suburb:</strong> Clayton</p>
+    <p class="gu" style="display:none;"><strong>વર્તમાન વિસ્તર:</strong> ક્લેટન</p>
+
+    <p class="en"><strong>Occupation:</strong> Warehouse</p>
+    <p class="gu" style="display:none;"><strong>પेशा:</strong> વેરહાઉસ</p>
+
+    <p class="en"><strong>Marital Status:</strong> Unmarried</p>
+    <p class="gu" style="display:none;"><strong>લગ્ન સ્થિતિ:</strong> અવિવાહિત</p>
+
+    <p class="en"><strong>Mobile:</strong> +61 435 385 436</p>
+    <p class="gu" style="display:none;"><strong>મોબાઇલ:</strong> +61 435 385 436</p>
+
+    <p class="en"><strong>Email:</strong> dhpatel1805@gmail.com</p>
+    <p class="gu" style="display:none;"><strong>ઈમેઈલ:</strong> dhpatel1805@gmail.com</p>
+  </div>
+</div>
+
+<!-- Bhavik Modal -->
+<div id="modal-bhavik" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalBhavikTitle" tabindex="-1">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-bhavik')" aria-label="Close Modal">&times;</span>
+    <h2 id="modalBhavikTitle" class="en">Bhavik Ashokbhai Patel Details</h2>
+    <h2 class="gu" style="display:none;">ભાવિક અશોકભાઈ પટેલ વિગતવાર</h2>
+
+    <p class="en"><strong>Native Place:</strong> Dhanodharda</p>
+    <p class="gu" style="display:none;"><strong>સ્થાનિક:</strong> ધનોધરડા</p>
+
+    <p class="en"><strong>Current Suburb:</strong> Clayton</p>
+    <p class="gu" style="display:none;"><strong>વર્તમાન વિસ્તર:</strong> ક્લેટન</p>
+
+    <p class="en"><strong>Occupation:</strong> Warehouse</p>
+    <p class="gu" style="display:none;"><strong>પیشہ:</strong> વેરહાઉસ</p>
+
+    <p class="en"><strong>Marital Status:</strong> Unmarried</p>
+    <p class="gu" style="display:none;"><strong>લગ્ન સ્થિતિ:</strong> અવિવાહિત</p>
+
+    <p class="en"><strong>Mobile:</strong> +61 493 667 719</p>
+    <p class="gu" style="display:none;"><strong>મોબાઇલ:</strong> +61 493 667 719</p>
+
+    <p class="en"><strong>Email:</strong> dharmi5102@gmail.com</p>
+    <p class="gu" style="display:none;"><strong>ઈમેઈલ:</strong> dharmi5102@gmail.com</p>
+  </div>
+</div>
+
+<!-- Brijesh Modal -->
+<div id="modal-brijesh" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalBrijeshTitle" tabindex="-1">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('modal-brijesh')" aria-label="Close Modal">&times;</span>
+    <h2 id="modalBrijeshTitle" class="en">Brijesh Patel Details</h2>
+    <h2 class="gu" style="display:none;">બ્રિજેશ પટેલ વિગતવાર</h2>
+
+    <p class="en"><strong>Native Place:</strong> Ramoshna</p>
+    <p class="gu" style="display:none;"><strong>સ્થાનિક:</strong> રમોશના</p>
+
+    <p class="en"><strong>Current Suburb:</strong> Truganina</p>
+    <p class="gu" style="display:none;"><strong>વર્તમાન વિસ્તર:</strong> ટ્રુગાનિના</p>
+
+    <!-- Add more details as you have -->
+  </div>
+</div>
+
+<!-- Repeat for each member... -->
+
+<!-- Closing script -->
+
+<script>
+  const toggleSwitch = document.getElementById('languageToggle');
+
+  toggleSwitch.addEventListener('change', () => {
+    const enElements = document.querySelectorAll('.en');
+    const guElements = document.querySelectorAll('.gu');
+
+    if (toggleSwitch.checked) {
+      enElements.forEach(el => (el.style.display = 'none'));
+      guElements.forEach(el => (el.style.display = ''));
+    } else {
+      enElements.forEach(el => (el.style.display = ''));
+      guElements.forEach(el => (el.style.display = 'none'));
+    }
+  });
+
+  function showModal(id) {
+    document.getElementById(id).style.display = 'block';
+  }
+  function closeModal(id) {
+    document.getElementById(id).style.display = 'none';
+  }
+
+  // Close modal on outside click
+  window.onclick = function(event) {
+    const modals = document.querySelectorAll('.modal');
+    modals.forEach(modal => {
+      if (event.target === modal) {
+        modal.style.display = 'none';
+      }
+    });
+  };
+</script>
+
+</body>
+</html>
